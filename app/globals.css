@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/*
+ * 科學決策 Design Tokens
+ * 品牌氣質：理性、克制、現代、可信、顧問感、研究感、東方結構感（不神祕）
+ * 主色：墨黑 / 米白 / 深灰 / 淺灰 / 少量低飽和金
+ * 金色僅用於：主要 CTA、小型標記、分隔線、互動狀態、重點文字
+ */
+
+:root {
+  --ink: #17150f; /* 墨黑：主文字、深色區塊 */
+  --ink-soft: #2c2a24; /* 次深：卡片深色面 */
+  --paper: #f6f4ee; /* 米白：主背景 */
+  --paper-raised: #fdfcf9; /* 提亮面：卡片 */
+  --graphite: #55524a; /* 深灰：次要文字 */
+  --stone: #8a867c; /* 中灰：輔助文字、標記 */
+  --mist: #e3e0d7; /* 淺灰：邊線、分隔 */
+  --gold: #a3813a; /* 低飽和金：CTA、重點 */
+  --gold-deep: #85682c; /* 深金：hover / 按下 */
+  --gold-faint: #efe7d4; /* 極淡金：重點區底色（小面積） */
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-graphite: var(--graphite);
+  --color-stone: var(--stone);
+  --color-mist: var(--mist);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-faint: var(--gold-faint);
+
+  --font-sans: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei",
+    ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--gold-faint);
+  color: var(--ink);
+}
+
+/* 鍵盤焦點：清楚、可辨識，不只靠顏色 */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
