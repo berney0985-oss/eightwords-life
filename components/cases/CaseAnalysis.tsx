@@ -1,11 +1,11 @@
-import type { SimulatedCase } from "@/types/case";
+import type { DecisionCase } from "@/types/case";
 import { personas } from "@/data/personas";
 import Link from "next/link";
 
 const domainLabel = { relationship: "感情", career: "職涯", creation: "創作／創業" } as const;
 
 /** 案例完整分析。文案層級：D（data/cases.ts）。 */
-export function CaseAnalysis({ item }: { item: SimulatedCase }) {
+export function CaseAnalysis({ item }: { item: DecisionCase }) {
   const persona = personas.find((p) => p.id === item.primaryPersonaId);
   const rows: Array<[string, string]> = [
     ["案例背景", item.background],

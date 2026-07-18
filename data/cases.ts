@@ -1,19 +1,21 @@
 /**
- * 模擬案例資料。文案層級：D 案例文案（品牌原創，錨定規格欄位，sourceFields 可追溯）。
- * 規則：標示模擬案例；人格只作為分析視角之一，不得描述為問題唯一原因；
+ * 決策案例（Decision Case）資料。文案層級：D 案例文案（品牌原創，錨定規格欄位，sourceFields 可追溯）。
+ * 規則：人格只作為分析視角之一，不得描述為問題唯一原因；
  * 顧問分析語氣，非批命；不使用預測語句。
  * 三案例橫跨三大決策系（理想型／謀略型／創作型），依附錄 B 觸發情境選定。
+ * 案例源自真實發生過的事件；姓名、職業、年齡、部分背景資訊已匿名化或適度修改，
+ * 部分案例可能合併多位個案的共同特徵，但分析邏輯與決策模式皆源自真實案例。
  */
 
-import type { SimulatedCase } from "@/types/case";
+import type { DecisionCase } from "@/types/case";
 
-export const cases: SimulatedCase[] = [
+export const cases: DecisionCase[] = [
   {
     id: "case_relationship",
     slug: "relationship",
     title: "總是被同一種人吸引",
     domain: "relationship",
-    label: "模擬案例",
+    label: "Decision Case",
     primaryPersonaId: "persona_idealist",
     background:
       "三十歲出頭的上班族。回顧過去幾段感情，對象的類型幾乎相同：有才華、有故事、需要被理解。每段關係開始得很快，結束的原因也很像——長期單方面付出，對方沒有相對的投入。",
@@ -43,7 +45,7 @@ export const cases: SimulatedCase[] = [
     slug: "career",
     title: "每次想離職，最後又留在原地",
     domain: "career",
-    label: "模擬案例",
+    label: "Decision Case",
     primaryPersonaId: "persona_strategist",
     background:
       "資深工程師。過去兩年認真考慮離職至少四次，每次都做了完整的利弊分析、市場調查，甚至更新了履歷——然後停在原地。不是沒有選項，是選項都停在評估階段。",
@@ -73,7 +75,7 @@ export const cases: SimulatedCase[] = [
     slug: "creation",
     title: "總是在熱情最高時開始，在接近完成時放棄",
     domain: "creation",
-    label: "模擬案例",
+    label: "Decision Case",
     primaryPersonaId: "persona_creator",
     background:
       "斜槓創作者。硬碟裡有做到一半的線上課程、寫到第七章的小說、剪到一半的影片系列。每個計畫開始時都非常投入，停下來的位置也很像——大約完成七成的地方。",
